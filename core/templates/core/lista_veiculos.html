@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Lista veiculos</h2>
+
+    <ul>
+        {% for veiculo in veiculos %}
+        <li>
+            <a href="{% url 'core_veiculo_update' veiculo.id %}">{{ veiculo.placa }} </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <form action="{% url 'core_lista_veiculo_novo' %}" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+
+</html>
