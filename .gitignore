@@ -1,5 +1,9 @@
 venv
 .DS_Store
+# See the name for you IDE
 .idea
-*sqlite3
+# If you are using sqlite3
+*.sqlite3
+# Name of your virtuan env
+.vEnv
 *pyc
