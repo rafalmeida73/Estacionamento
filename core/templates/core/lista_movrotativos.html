@@ -1,18 +1,78 @@
-<h2>Lista Movimentos Rotativos</h2>
+{% extends 'base.html' %}
+{% load bootstrap %}
 
-<ul>
-    {% for movr in mov_rot %}
-    <li>
-        <a href="{% url 'core_movrotativos_update' movr.id %}">
-            {{ movr.checkin }} - {{ movr.veiculo.placa }}
-        </a>
-    </li>
-    {% endfor %}
+{% block menu %}
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+      aria-expanded="false">Serviços</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+      <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
+      <a class="dropdown-item active" href="{% url 'core_lista_movrotativos' %}">Movimentos rotativos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+    </div>
+  </li>
+  {% if user.is_authenticated %}
+  <li class="nav-item ">
+    <a class="nav-link disabled" href="#">Ola. {{ user }}</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout'  %}">Logout</a>
+  </li>
+  {% else %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'login'  %}">Login</a>
+  </li>
+  {% endif %}
+
 </ul>
+{% endblock menu %}
 
-<form action="{% url 'core_lista_movrotativos_novo' %}" method="POST">
-    {% csrf_token %}
+{% block main %}
+<div class="row">
+  <div class="col-6">
+    <h1>Lista Movimentos Rotativos</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Checkin</th>
+          <th scope="col">Checkout</th>
+          <th scope="col">Valor hora</th>
+          <th scope="col">Veiculo</th>
+          <th scope="col">Pago</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for movr in mov_rot %}
+        <tr>
+          <th scope="row">{{ movr.id }}</th>
+          <td>{{ movr.checkin }}</td>
+          <td>{{ movr.checkout }}</td>
+          <td>{{ movr.valor_hora }}</td>
+          <td>{{ movr.veiculo }}</td>
+          <td>{{ movr.pago }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
-    {{ form.as_p }}
-    <button type="submit">Cadastrar</button>
-</form>
+
+  <div class="col-6">
+    <h1>Cadastro</h1>
+    <form action="{% url 'core_lista_movrotativos_novo' %}" method="POST">
+      {% csrf_token %}
+
+      {{ form|bootstrap }}
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+</div>
+{% endblock main %}

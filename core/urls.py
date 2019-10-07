@@ -42,6 +42,7 @@ urlpatterns = [
 
 
 
+
     path('mov_rot', lista_movrotativos, name='core_lista_movrotativos'),
     path('mov_rot_novo', movrot_novo, name='core_lista_movrotativos_novo'),
     path(r'mov-rot-update/(?P<id>\d+)/$', movrotativos_update, 
@@ -63,5 +64,4 @@ urlpatterns = [
         name='core_movmensalista_update'),
     path(r'mov-mensalista-delete/(?P<id>\d+)/$', movmensalista_delete,
          name='core_movmensalista_delete'),
-
 ]
