@@ -2,13 +2,46 @@
 {% load static %}
 
 {% block main %}
+<div class="row p-3 mb-2 bg-info text-white">
+    <div class="col-6">
+        <h1 class="titulo">Estacionamento 24 horas</h1>
+        <span class="subtitulo">Slogan Estacionamento</span>
+    </div>
+    <div class="col-6">
+        <img src="{% static 'img/parking.png'%}" alt=" Imagem Estacionamento 24 horas" class="logo">
+    </div>
+    <div class="col-12">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link " href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_planos' %}">Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link active" href="{% url 'website_contato' %}">Contatos</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'core_home' %}">Sistema</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
 <div class="row row-space">
     <div class="col-6">
         <form>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
             </div>
             <div class="form-row">
@@ -31,10 +64,10 @@
 
             <div class="form-group">
                 <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                   Receber noticias
-                </label>
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Receber noticias
+                    </label>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
@@ -42,14 +75,14 @@
     </div>
     <div class="col-6">
         <p>
-                Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. 
-                Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! 
-                Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Pra lá , 
-                depois divoltis porris, paradis.
-                Per aumento de cachacis, eu reclamis. Posuere libero varius. 
-                Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. 
-                Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, 
-                vitae iaculis nisl. In elementis mé pra quem é amistosis quis leo.
+            Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis.
+            Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+            Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Pra lá ,
+            depois divoltis porris, paradis.
+            Per aumento de cachacis, eu reclamis. Posuere libero varius.
+            Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.
+            Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo,
+            vitae iaculis nisl. In elementis mé pra quem é amistosis quis leo.
         </p>
 
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0488551513!2d-
@@ -57,7 +90,7 @@
             1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2sS%C3%A3o+Paulo%2C+SP%2C+Brasil!5e0!3m2!1spt-
             BR!2sie!4v1535321167233" width="500" height="400" frameborder="0" style="border:0" allowfullscreen>
         </iframe>
-        
+
     </div>
 </div>
 {% endblock %}

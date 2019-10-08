@@ -1,35 +1,40 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
-{% block menu %}
-    <div class="row">
+
+
+{% block main %}
+<div class="row p-3 mb-2 bg-info text-white">
+        <div class="col-6">
+            <h1 class="titulo">Estacionamento 24 horas</h1>
+            <span class="subtitulo">Slogan Estacionamento</span>
+        </div>
+        <div class="col-6">
+            <img src="{% static 'img/parking.png'%}" alt=" Imagem Estacionamento 24 horas" class="logo">
+        </div>
         <div class="col-12">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class=" text-white nav-link" href="{% url 'website_home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'website_servicos' %}">Servicos</a>
+                    <a class=" text-white nav-link active" href="{% url 'website_servicos' %}">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class=" text-white nav-link" href="{% url 'website_sobre' %}">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Plano</a>
+                    <a class=" text-white nav-link" href="{% url 'website_planos' %}">Planos</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="{% url 'website_contato' %}">Contatos</a>
+                    <a class=" text-white nav-link" href="{% url 'website_contato' %}">Contatos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core_home' %}">Sistema</a>
+                    <a class=" text-white nav-link" href="{% url 'core_home' %}">Sistema</a>
                 </li>
             </ul>
         </div>
     </div>
-{% endblock %}
-
-
-{% block main %}
 <div class="row row-space">
     <div class="col-12">
             Mussum Ipsum, cacilds vidis litro abertis. Nec orci ornare consequat. 

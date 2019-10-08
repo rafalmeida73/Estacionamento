@@ -1,14 +1,10 @@
-body{
-    background-color: black
-}
-
 .footer-website{
     bottom: 0;
     position: absolute;
 }
 
 .row-space {
-    margin-top: 35px;
+    margin-top: 65px;
 }
 
 .img-moto{
@@ -20,14 +16,10 @@ margin-left: 80px;
 }
 .titulo{
     margin-top: 80px;
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .subtitulo{
-    margin-left: 200px;
-}
-
-.row-space{
-    margin-top: 25px;
+    margin-left: 380px;
 }
 

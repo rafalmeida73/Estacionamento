@@ -4,86 +4,117 @@
 
 {% block main %}
 <div class="row p-3 mb-2 bg-info text-white">
-        <div class="col-6">
-            <h1 class="titulo">Estacionamento 24 horas</h1>
-            <span class="subtitulo">Slogan Estacionamento</span>
-        </div>
-        <div class="col-6">
-            <img src="{% static 'img/parking.png'%}" alt=" Imagem Estacionamento 24 horas" class="logo">
-        </div>
-        <div class="col-12">
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class=" text-white nav-link active" href="{% url 'website_home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link " href="{% url 'website_servicos' %}">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link" href="{% url 'website_sobre' %}">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link" href="{% url 'website_planos' %}">Planos</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link " href="{% url 'website_contato' %}">Contatos</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link" href="{% url 'core_home' %}">Sistema</a>
-                </li>
-            </ul>
-        </div>
+    <div class="col-6">
+        <h1 class="titulo">Estacionamento 24 horas</h1>
+        <span class="subtitulo">Slogan Estacionamento</span>
     </div>
+    <div class="col-6">
+        <img src="{% static 'img/parking.png'%}" alt=" Imagem Estacionamento 24 horas" class="logo">
+    </div>
+    <div class="col-12">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link " href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link " href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link active" href="{% url 'website_planos' %}">Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_contato' %}">Contatos</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'core_home' %}">Sistema</a>
+            </li>
+        </ul>
+        
+    </div>
+</div>
 
 <div class="row row-space">
-    <div class="col-6">
+    <div class="col-8">
         Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai
         matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral
         subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn!
         danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.
-    </div>
-    <div class="col-6">
+
         Você usa o Lorem Ipsum tradicional? Sabe de nada inocente!! Conheça meu lorem que é Tchan, Tchan, Tchannn!! Txu
         Txu Tu Paaaaa!! Vem, vem ordinária!! Venha provar do meu dendê que você não vai se arrepender. Só na
         sacanageeem!! Eu gostchu muitchu, heinn! Eitchaaa template cheio de abundância danadaaa!! Assim você mata o
         papai hein!? Etâaaa Mainhaaaaa...me abusa nesse seu layout, me gera, me geraaaa ordinária!!! Só na sacanagem!!!!
         Venha provar do meu dendê Tu du du pááá!.
     </div>
-</div>
-
-
-<div class="row row-space">
     <div class="col-4">
+        <img src="{% static 'img/carro.jpg' %}" alt="locadl do estacionamento">
+    </div>
+</div>
+<div class="row row-space">
+    <div class="col-10">
+
+    </div>
+    <div class="col-2">
+            <button type="button" class="btn btn-outline-success btn-lg ">Contratar</button>
+    </div>
+</div>
+<div class="row row-space">
+    <div class="col-8">
         Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai
         matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral
         subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn!
         danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.
-    </div>
-    <div class="col-4">
-        <img src="{% static 'img/barrier.png'%}" alt=" Imagem Moto Parada" class="img-moto">
-    </div>
-    <div class="col-4">
+
         Você usa o Lorem Ipsum tradicional? Sabe de nada inocente!! Conheça meu lorem que é Tchan, Tchan, Tchannn!! Txu
         Txu Tu Paaaaa!! Vem, vem ordinária!! Venha provar do meu dendê que você não vai se arrepender. Só na
         sacanageeem!! Eu gostchu muitchu, heinn! Eitchaaa template cheio de abundância danadaaa!! Assim você mata o
         papai hein!? Etâaaa Mainhaaaaa...me abusa nesse seu layout, me gera, me geraaaa ordinária!!! Só na sacanagem!!!!
         Venha provar do meu dendê Tu du du pááá!.
     </div>
+    <div class="col-4">
+        <img src="{% static 'img/moto.jpg' %}" alt="locadl do estacionamento">
+    </div>
 </div>
 
+
 <div class="row row-space">
-    <div class="col-6">
+        <div class="col-10">
+    
+        </div>
+        <div class="col-2">
+                <button type="button" class="btn btn-outline-success btn-lg ">Contratar</button>
+        </div>
+    </div>
+
+
+<div class="row row-space">
+    <div class="col-8">
         Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai
         matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral
         subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn!
         danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.
-    </div>
-    <div class="col-6">
+
         Você usa o Lorem Ipsum tradicional? Sabe de nada inocente!! Conheça meu lorem que é Tchan, Tchan, Tchannn!! Txu
         Txu Tu Paaaaa!! Vem, vem ordinária!! Venha provar do meu dendê que você não vai se arrepender. Só na
         sacanageeem!! Eu gostchu muitchu, heinn! Eitchaaa template cheio de abundância danadaaa!! Assim você mata o
         papai hein!? Etâaaa Mainhaaaaa...me abusa nesse seu layout, me gera, me geraaaa ordinária!!! Só na sacanagem!!!!
         Venha provar do meu dendê Tu du du pááá!.
     </div>
+    <div class="col-4">
+        <img src="{% static 'img/carro-moto.jpg' %}" alt="locadl do estacionamento">
+    </div>
 </div>
+
+<div class="row row-space">
+        <div class="col-10">
+    
+        </div>
+        <div class="col-2">
+                <button type="button" class="btn btn-outline-success btn-lg ">Contratar</button>
+        </div>
+    </div>
+
 {% endblock main %}

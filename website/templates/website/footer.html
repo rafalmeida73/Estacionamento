@@ -1,10 +1,12 @@
 <div class="row row-space p-3 mb-2 bg-info text-white">
         <div class="col-3">
             <nav class="nav flex-column">
-                <a class="text-white nav-link active" href="#">Active</a>
-                <a class="text-white nav-link" href="#">Link</a>
-                <a class="text-white nav-link" href="#">Link</a>
-                <a class=" text-white nav-link disabled" href="#">Disabled</a>
+                <a class="text-white nav-link active" href="{% url 'website_home' %}">Home</a>
+                <a class="text-white nav-link" href="{% url 'website_servicos' %}">Serviços</a>
+                <a class="text-white nav-link" href="{% url 'website_sobre' %}">Sobre</a>
+                <a class=" text-white nav-link" href="{% url 'website_planos' %}">Planos</a>
+                <a class=" text-white nav-link" href="{% url 'website_contato' %}">Contatos</a>
+                <a class=" text-white nav-link" href="{% url 'core_home' %}">Sistema</a>
             </nav>
         </div>
         <div class="col-6">
