@@ -1,0 +1,33 @@
+body{
+    background-color: black
+}
+
+.footer-website{
+    bottom: 0;
+    position: absolute;
+}
+
+.row-space {
+    margin-top: 35px;
+}
+
+.img-moto{
+margin-left: 80px;
+}
+
+.logo{
+    margin-left: 200px;
+}
+.titulo{
+    margin-top: 80px;
+    margin-left: 50px;
+}
+
+.subtitulo{
+    margin-left: 200px;
+}
+
+.row-space{
+    margin-top: 25px;
+}
+
