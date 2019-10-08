@@ -34,43 +34,55 @@
     </div>
 </div>
 
-<div class="row  row-space">
-        <div class="col-12">
-            <h1>Contatos</h1>
-        </div>
+
+<div class="row ">
+    <div class="col-12">
+        <p class="text-success"> {{ mensagem }}</p>
     </div>
+
+</div>
+
+
+<div class="row  row-space">
+    <div class="col-12">
+        <h1>Contatos</h1>
+    </div>
+</div>
 
 
 <div class="row row-space">
     <div class="col-6">
-        <form>
+        <form method="POST">
+            {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNome">Nome</label>
-                    <input type="text" class="form-control" id="inputNome" placeholder="Seu nome aqui">
+                    <input type="text" class="form-control" id="inputNome" placeholder="Seu nome aqui" name="nome">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputSobreNome">Sobrenome</label>
-                    <input type="text" class="form-control" id="inputSobreNome" placeholder="Seu sobrenome aqui">
+                    <input type="text" class="form-control" id="inputSobreNome" placeholder="Seu sobrenome aqui"
+                        name="sobrenome">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress2">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                    name="endereco">
             </div>
             <div class="form-group">
-                <textarea name="" id="" cols="65" rows="10" class="form-control"></textarea>
+                <textarea id="" cols="65" rows="10" class="form-control" name="mensagem"></textarea>
             </div>
 
             <div class="form-group">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" name="receber_noticias">
                     <label class="form-check-label" for="gridCheck">
                         Receber noticias
                     </label>
