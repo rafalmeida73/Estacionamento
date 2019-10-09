@@ -1,3 +1,9 @@
+from django.http import HttpResponse
+from django.template.loader import get_template
+import xhtml2pdf.pisa as pisa
+import io
+from django.views.generic.base import View
+import csv
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import (
@@ -11,6 +17,7 @@ from .models import (
 from .form import ( PessoaForm, VeiculoForm, MovRotForm, MensalistaForm,
      MovMesalForm
 )
+
 
 @login_required
 def home(request):
@@ -224,3 +231,168 @@ def movmensalista_update(request, id):
             return redirect('core_lista_movmensalistas')
     else:
          return render(request, 'core/update_movmensalista.html', data)
+
+
+class Render:
+    @staticmethod
+    def render(path: str, params: dict, filename: str):
+        template = get_template(path)
+        html = template.render(params)
+        response = io.BytesIO()
+        pdf = pisa.pisaDocument(
+            io.BytesIO(html.encode("UTF-8")), response)
+        if not pdf.err:
+            response = HttpResponse(
+                response.getvalue(), content_type='application/pdf')
+            response['Content-Disposition'] = 'attachment;filename=%s.pdf' % filename
+            return response
+        else:
+            return HttpResponse("Error Rendering PDF", status=400)
+
+
+class Pdf(View):
+
+    def get(self, request):
+        veiculos = Veiculo.objects.all()
+        params = {
+            'veiculos': veiculos,
+            'request': request,
+        }
+        return Render.render('core/relatorio.html', 
+        params, 'relatorio_veiculos')
+
+
+class PdfMensalista(View):
+
+    def get(self, request):
+        mensalistas = Mensalista.objects.all()
+        params = {
+            'mensalistas': mensalistas,
+            'request': request,
+        }
+        return Render.render('core/relatorioMensalistas.html', 
+        params, 'relatorio_mensalistas')
+
+
+class PdfMovMensalista(View):
+
+    def get(self, request):
+        movmensalistas = MovMensalista.objects.all()
+        params = {
+            'movmensalistas': movmensalistas,
+            'request': request,
+        }
+        return Render.render('core/relatorioMovMensalistas.html', 
+        params, 'relatorio_movmensalistas')
+
+
+class PdfMovRotativo(View):
+
+    def get(self, request):
+        movrotativo = MovRotativo.objects.all()
+        params = {
+            'movrotativo': movrotativo,
+            'request': request,
+        }
+        return Render.render('core/relatorioMovRotativo.html', 
+        params, 'relatorio_movrotativo')
+
+
+class PdfPessoas(View):
+
+    def get(self, request):
+        pessoas = Pessoa.objects.all()
+        params = {
+            'pessoas': pessoas,
+            'request': request,
+        }
+        return Render.render('core/relatorioPessoas.html', 
+        params, 'relatorio_pessoas')
+
+
+class ExportarParaCSV(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="veiculos.csv"'
+
+        veiculos = Veiculo.objects.all()
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Marca', 'placa', 'Proprietario', 'Cor'])
+
+        for veiculo in veiculos:
+            writer.writerow(
+                [veiculo.id, veiculo.marca, veiculo.placa, veiculo.proprietario,
+                 veiculo.cor
+                 ])
+
+        return response 
+
+
+class CSVMensalista(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="mensalistas.csv"'
+
+        mensal = Mensalista.objects.all()
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'veiculo', 'Valor mes'])
+
+        for mensalistas in mensal:
+            writer.writerow(
+                [mensalistas.id, mensalistas.veiculo, mensalistas.valor_mes])
+
+        return response   
+
+
+class CSVMovMensalista(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="movimento_mensalistas.csv"'
+
+        movMensal = MovMensalista.objects.all()
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Mensalista', 'Data pgto', 'Total'])
+
+        for mensalistas in movMensal:
+            writer.writerow(
+                [mensalistas.id, mensalistas.mensalista, mensalistas.dt_pgto, mensalistas.total])
+
+        return response  
+
+
+class CSVMovRotativo(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="movimento_rotativo.csv"'
+
+        movRot = MovRotativo.objects.all()
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Checkin', 'Checkout', 'Valor hora', 'Veiculo', 'Pago'])
+
+        for rotativo in movRot:
+            writer.writerow(
+                [rotativo.id, rotativo.checkin, rotativo.checkout, rotativo.valor_hora, rotativo.veiculo, rotativo.Pago])
+
+        return response   
+  
+
+class CSVPessoas(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="pessoas.csv"'
+
+        pessoa = Pessoa.objects.all()
+
+        writer = csv.writer(response)
+        writer.writerow(['Id', 'Nome', 'Endereço', 'Telefone'])
+
+        for pessoas in pessoa:
+            writer.writerow(
+                [pessoas.id, pessoas.nome, pessoas.endereco, pessoas.telefone])
+
+        return response   
+  

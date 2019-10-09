@@ -37,7 +37,7 @@
 {% block main %}
 </div>
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-12">
     <h1>Lista Movimentos Mensalista</h1>
     <table class="table">
       <thead class="thead-dark">
@@ -60,9 +60,20 @@
       </tbody>
     </table>
   </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-sm-2">
+    <a class="btn btn-info" href="{% url 'relatorioMovMensalista_pdf' %}">Relatorio PDF</a>
+  </div>
+  <div class="col-sm-2">
+    <a class="btn btn-info" href="{% url 'relatorioMovMensalista_csv' %}">Relatorio CSV</a>
+  </div>
+</div>
 
 
-  <div class="col-sm-6">
+<div class="row mt-5">
+  <div class="col-sm-12">
     <h1>Cadastro</h1>
     <form action="{% url 'core_lista_movmensalista_novo' %}" method="POST">
       {% csrf_token %}

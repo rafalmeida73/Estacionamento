@@ -20,7 +20,17 @@ from .views import (
     veiculo_delete,
     movrotativos_delete,
     mensalista_delete,
-    movmensalista_delete
+    movmensalista_delete,
+    Pdf,
+    PdfMensalista,
+    PdfMovMensalista,
+    PdfMovRotativo,
+    PdfPessoas,
+    ExportarParaCSV,
+    CSVMensalista,
+    CSVMovMensalista,
+    CSVMovRotativo,
+    CSVPessoas
 )
 
 
@@ -64,4 +74,17 @@ urlpatterns = [
         name='core_movmensalista_update'),
     path(r'mov-mensalista-delete/(?P<id>\d+)/$', movmensalista_delete,
          name='core_movmensalista_delete'),
+
+     path('relatorio', Pdf.as_view(), name='relatorio_pdf'),
+     path('relatorio_mensalista', PdfMensalista.as_view(), name='relatorioMensalista_pdf'),
+     path('relatorio_movmensalista', PdfMovMensalista.as_view(), name='relatorioMovMensalista_pdf'),
+     path('relatorio_movrotativo', PdfMovRotativo.as_view(), name='relatorioMovRotativo_pdf'),
+     path('relatorio_pessoas', PdfPessoas.as_view(), name='relatorioPessoas_pdf'),
+
+     path('relatorio-csv', ExportarParaCSV.as_view(), name='relatorio_csv'),
+     path('relatoriomensalista-csv', CSVMensalista.as_view(), name='relatorioMensalista_csv'),
+     path('relatoriomovmensalista-csv', CSVMovMensalista.as_view(), name='relatorioMovMensalista_csv'),
+     path('relatoriomovrotativo-csv', CSVMovRotativo.as_view(), name='relatorioMovRotativo_csv'),
+     path('relatopessoas-csv', CSVPessoas.as_view(), name='relatorioPessoas_csv'),
+     
 ]

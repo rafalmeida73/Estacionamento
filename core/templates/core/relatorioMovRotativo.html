@@ -1,0 +1,28 @@
+<style>
+        .test {
+            color: red;
+        }
+    </style>
+    
+    <h1 class="test">Relatorio de Movimento Rotativo</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Checkin</td>
+            <td>Checkout</td>
+            <td>Valor Hora</td>
+            <td>Veiculo</td>
+            <td>Pago</td>
+        </tr>
+    
+        {% for movrotativo in mov_mensalista %}
+        <tr>
+            <td>{{ movrotativo.id }}</td>
+            <td>{{ movrotativo.checkin }}</td>
+            <td>{{ movrotativo.checkout }}</td>
+            <td>{{ movrotativo.valor_hora }}</td>
+            <td>{{ movrotativo.veiculo }}</td>
+            <td>{{ movrotativo.pago }}</td>
+        </tr>
+        {% endfor %}
+    </table>
