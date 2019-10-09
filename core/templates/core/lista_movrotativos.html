@@ -40,7 +40,7 @@
 {% block main %}
 <div class="row row-space">
   <div class="col-12">
-    <h1 class="mb-5 titlelista">Lista Movimentos Rotativos</h1>
+    <h1 class="mb-5">Lista Movimentos Rotativos</h1>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -81,7 +81,7 @@
 
 <div class="row mt-5">
   <div class="col-12">
-    <h1 class="titlelista">Cadastro</h1>
+    <h1>Cadastro</h1>
     <form action="{% url 'core_lista_movrotativos_novo' %}" method="POST">
       {% csrf_token %}
 

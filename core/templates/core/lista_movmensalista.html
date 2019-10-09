@@ -3,7 +3,7 @@
 
 {% block menu %}
 <div class="container-fluid">
-<ul class="nav nav-tabs">
+  <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" href="{% url 'core_home'%}">Home</a>
     </li>
@@ -14,35 +14,35 @@
         <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
         <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
         <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos Rotativos</a>
-        
+
         <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
         <a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">Movimentos Mensalistas</a>
       </div>
     </li>
 
 
-  {% if user.is_authenticated %}
-  <li class="nav-item ">
-    <a class="nav-link disabled" href="#">Ola. {{ user }}</a>
-  </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item ">
+      <a class="nav-link disabled" href="#">Ola. {{ user }}</a>
+    </li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'logout'  %}">Logout</a>
-  </li>
-  {% else %}
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'login'  %}">Login</a>
-  </li>
-  {% endif %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout'  %}">Logout</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'login'  %}">Login</a>
+    </li>
+    {% endif %}
 
-</ul>
-{% endblock menu %}
+  </ul>
+  {% endblock menu %}
 
-{% block main %}
+  {% block main %}
 </div>
 <div class="row row-space">
   <div class="col-sm-12">
-    <h1 class="mb-5 titlelista">Lista Movimentos Mensalista</h1>
+    <h1 class="mb-5">Lista Movimentos Mensalista</h1>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -78,7 +78,7 @@
 
 <div class="row mt-5">
   <div class="col-sm-12">
-    <h1 class="titlelista">Cadastro</h1>
+    <h1>Cadastro</h1>
     <form action="{% url 'core_lista_movmensalista_novo' %}" method="POST">
       {% csrf_token %}
 
