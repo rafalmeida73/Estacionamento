@@ -4,17 +4,18 @@
 {% block menu %}
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+    <a class="nav-link active" href="{% url 'core_home'%}">Home</a>
   </li>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
       aria-expanded="false">Serviços</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
       <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
-      <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos rotativos</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item active" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+      <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos Rotativos</a>
+
+      <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+      <a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">Movimentos Mensalistas</a>
     </div>
   </li>
 
@@ -37,8 +38,7 @@
 
 
 {% block main %}
-<div class="row">
-
+<div class="row row-space">
   <div class="col-sm-12">
     <h1>Lista Mensalistas</h1>
     <table class="table">
@@ -52,7 +52,7 @@
       <tbody>
         {% for mensal in mensalistas %}
         <tr>
-          <th scope="row">{{ mensal.id }}</th>
+          <th scope="row"><a href="{% url 'core_mensalista_update' mensal.id %}">{{ mensal.id }}</a></th>
           <td>{{ mensal.veiculo }}</td>
           <td>{{ mensal.valor_mes }}</td>
         </tr>

@@ -3,20 +3,23 @@
 
 {% block menu %}
 <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'core_home'%}">Home</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-      aria-expanded="false">Serviços</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item active" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
-      <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
-      <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos rotativos</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
-    </div>
-  </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'core_home'%}">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+        aria-expanded="false">Serviços</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+        <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
+        <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos Rotativos</a>
+        
+        <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+        <a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">Movimentos Mensalistas</a>
+      </div>
+    </li>
+
+
   {% if user.is_authenticated %}
   <li class="nav-item ">
     <a class="nav-link disabled" href="#">Ola. {{ user }}</a>
@@ -31,11 +34,12 @@
   </li>
   {% endif %}
 
+
 </ul>
 {% endblock menu %}
 
 {% block main %}
-<div class="row">
+<div class="row row-space">
   <div class="col-sm-12">
     <h1>Lista pessoas</h1>
 
@@ -51,8 +55,8 @@
       <tbody>
         {% for pessoa in pessoas%}
         <tr>
-          <th scope="row">{{ pessoa.id }}</th>
-          <td>{{ pessoa.nome }}</td>
+          <th scope="row"><a href="{% url 'core_pessoa_update' pessoa.id %}">{{ pessoa.id }}</a></th>
+          </a><td>{{ pessoa.nome }}</td>
           <td>{{ pessoa.endereco }}</td>
           <td>{{ pessoa.telefone }}</td>
         </tr>

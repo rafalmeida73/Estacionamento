@@ -11,9 +11,10 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
       <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
-      <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos rotativos</a>
-      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="{% url 'core_lista_movrotativos' %}">Movimentos Rotativos</a>
+      
       <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+      <a class="dropdown-item" href="{% url 'core_lista_movmensalistas' %}">Movimentos Mensalistas</a>
     </div>
   </li>
 
@@ -23,8 +24,8 @@
   </li>
 
   <li class="nav-item">
-      <a class="nav-link" href="{% url 'logout'  %}">Logout</a>
-    </li>
+    <a class="nav-link" href="{% url 'logout'  %}">Logout</a>
+  </li>
   {% else %}
   <li class="nav-item">
     <a class="nav-link" href="{% url 'login'  %}">Login</a>
@@ -37,10 +38,30 @@
 
 {% block main %}
 
-<div class="row">
+<div class="row sistema">
   <div class="col">
-    <h1>Seja bem vindo!</h1>
-    <a href="/admin">Clique aqui para entrar</a>
+    <h1 class="ml-5 mt-5 sistema ">Seja bem vindo ao sistema <span class="text-primary">{{ user }}</span>!</h1>
+  </div>
+</div>
+<div class="row  links">
+  <div class="col links">
+      <ul class="nav flex-column">
+          <li class="nav-item spaceli" >
+            <a class="nav-link active" href="#"><span  class="badge badge-dark"> Pessoas</span> cadastradas</a>
+          </li>
+          <li class="nav-item spaceli">
+            <a class="nav-link" href="#"> <span  class="badge badge-dark">Veiculos</span>  cadastradas</a>
+          </li>
+          <li class="nav-item spaceli">
+            <a class="nav-link" href="#">Movimentos <span  class="badge badge-dark">Rotativos</span>  </a>
+          </li>
+          <li class="nav-item spaceli">
+            <a class="nav-link" href="#"><span  class="badge badge-dark">Mensalistas</span>  Cadastradas</a>
+          </li>
+          <li class="nav-item spaceli">
+            <a class="nav-link" href="#">Movimentos dos <span class="badge badge-dark">Mensalistas</span> </a>
+          </li>
+        </ul>
   </div>
 </div>
 

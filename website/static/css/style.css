@@ -1,0 +1,60 @@
+.footer-website{
+    bottom: 0;
+    position: absolute;
+}
+
+.row-space {
+    margin-top: 65px;
+}
+
+.img-moto{
+margin-left: 80px;
+}
+
+.logo{
+    margin-left: 200px;
+}
+.titulo{
+    margin-top: 80px;
+    margin-left: 90px;
+}
+
+.subtitulo{
+    margin-left: 380px;
+}
+
+.txtlogin{
+    font-family: 'Mansalva', cursive;
+    margin-left: 400px;
+    font-size: 30px;
+}
+
+.formulariol{
+    margin:90px 0px 0 470px; 
+}
+
+.btnlogin{
+    width: 240px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.esqueceu{
+    font-family: 'Mansalva', cursive;
+    margin-top: 30px;
+}
+
+.sistema{
+    font-family: 'Mansalva', cursive;
+    margin-top: 30px;
+    margin-left: 240px;
+}
+
+.links{
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+.spaceli{
+    margin-top: 50px;
+}

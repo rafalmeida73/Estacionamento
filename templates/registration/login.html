@@ -1,38 +1,78 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block main %}
+<div class="row p-3 mb-2 bg-info text-white">
+    <div class="col-6">
+        <h1 class="titulo">Estacionamento 24 horas</h1>
+        <span class="subtitulo">Slogan Estacionamento</span>
+    </div>
+    <div class="col-6">
+        <img src="{% static 'img/parking.png'%}" alt=" Imagem Estacionamento 24 horas" class="logo">
+    </div>
+    <div class="col-12">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link " href="{% url 'website_servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_sobre' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_planos' %}">Planos</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link" href="{% url 'website_contato' %}">Contatos</a>
+            </li>
+            <li class="nav-item">
+                <a class=" text-white nav-link active" href="{% url 'core_home' %}">Sistema</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row row-space">
+    <div class="col-12">
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+        {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+        {% else %}
+        <p class="txtlogin">Faça o login para ver esta página.</p>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
-{% endif %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+<form method="post" action="{% url 'login' %}" class="formulariol" >
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td >{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+    </table>
 
-<input type="submit" value="login">
-<input type="hidden" name="next" value="{{ next }}">
+    <input type="submit" value="login" class="btn btn-outline-primary btnlogin">
+    <input type="hidden" name="next" value="{{ next }}">
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+<p><a href="{% url 'password_reset' %}" class="esqueceu">Esqueceu a senha?</a></p>
+<div class="row">
+    <div class="col-12">
+        {% include "website/footer.html" %}
+    </div>
+</div>
 {% endblock %}
