@@ -91,7 +91,7 @@ margin-left: 80px;
         font-size: 20px;
     }
     .formulariol{
-        margin:90px 0px 0 45px; 
+        margin:90px 0px 0 30px; 
     }
 
     .sistema{
@@ -101,9 +101,6 @@ margin-left: 80px;
     }
     .hlink{
         font-size: 20px;
-    }
-    .drop{
-        display: none;
     }
     .btncsv{
         margin-top:5px;
