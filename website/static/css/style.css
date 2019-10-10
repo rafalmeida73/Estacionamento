@@ -17,6 +17,7 @@ margin-left: 80px;
 .titulo{
     margin-top: 80px;
     margin-left: 90px;
+    font-size: 40px;
 }
 
 .subtitulo{
@@ -58,3 +59,181 @@ margin-left: 80px;
 .spaceli{
     margin-top: 50px;
 }
+
+.sobre{
+    font-size: 40px;
+}
+
+
+@media only screen and (max-width: 600px) {
+   /* body {
+      background-color: lightblue;
+    }*/
+    .titulo{
+        font-size: 20px;
+        width: 80%;
+        margin-left: 35px;
+    }
+    .subtitulo{
+        display: none;
+    }
+    .logo{
+        margin-left: 50px;
+    }
+    .img-moto{
+        margin: 40px 0 40px 17%;
+    }
+    .footer-website{
+        bottom: 0;
+        position: absolute;
+        margin-left: 80px;
+        width: 100%;
+    }
+    .sobre{
+        font-size: 22px;
+    }
+    .cspace{
+        margin-top: 50px;
+    }
+    .mapa{
+        width: 100%
+    }
+    .txtlogin{
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .formulariol{
+        margin:90px 0px 0 50px; 
+    }
+
+    .sistema{
+        margin-top: 30px;
+        margin-left: -50px;
+        font-size: 20px;
+    }
+    .hlink{
+        font-size: 20px;
+    }
+    .drop{
+        display: none;
+    }
+    .btncsv{
+        margin-top:5px;
+    }
+   .btncadastro{
+       margin-bottom: 30px;
+   }
+   .titulosistema{
+       font-size: 25px;
+   }
+  }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /*  body{
+          background-color: blueviolet
+      } */
+      .subtitulo{
+        display: none;
+    }
+    .titulo{
+        font-size: 30px;
+        width: 300%;
+        margin-left: 1px;
+    }
+    .img-moto{
+        margin-left: 1px;
+        margin-top: 70px;
+    }
+    .footer-website{
+        bottom: 0;
+        position: absolute;
+        width: 150%;
+    }
+    .logo{
+        margin-left: 300px;
+    }
+    .lugar{
+        margin-top: 250px;
+        margin-left: 10px;
+    }
+    .planos{
+        margin-top: 120px;
+    }
+    .btnplanos{
+        margin-left: -15px;
+    }
+    .txtlogin{
+        margin-left: 100px;
+        margin-top: 100px;
+        font-size: 40px;
+    }
+    .formulariol{
+        margin:90px 0px 0 250px; 
+    }
+    .fspace{
+        margin-top: 150px;
+    }
+    .sistema{
+        margin-top: 30px;
+        margin-left: -50px;
+        font-size: 50px;
+    }
+    .mapa{
+        width: 100%
+    }
+    }
+
+    @media screen and (min-width: 800px) and (max-width: 1100px) {
+       /* body{
+            background-color: brown;
+        }*/
+        .titulo{
+            font-size: 50px;
+            width: 150%;
+            margin-left: 1px;
+        }
+        .subtitulo{
+            display: none;
+        }
+        .img-moto{
+            margin-left: 40px;
+            margin-top: 30px;
+        }
+        .footer-website{
+            bottom: 0;
+            position: absolute;
+            width: 120%;
+        }
+        .lugar{
+            margin-top: 100px;
+            margin-left: 150px;
+        }
+        .txtlogin{
+            margin-left: 150px;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+        .formulariol{
+            margin:90px 0px 0 400px; 
+        }
+        .fspace{
+            margin-top: 150px;
+        }
+        .sistema{
+            margin-top: 30px;
+            margin-left: 10px;
+            font-size: 60px;
+        }
+        .spaceli{
+            margin-top: 100px;
+        }
+        .mapa{
+            width: 100%
+        }
+        .lugar{
+            margin-top: 90px;
+            margin-left: 10px;
+        }
+        .planos{
+            margin-top: 30px;
+        }
+    }

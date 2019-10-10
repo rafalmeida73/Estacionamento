@@ -6,7 +6,7 @@
     <li class="nav-item">
       <a class="nav-link active" href="{% url 'core_home'%}">Home</a>
     </li>
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown drop">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
         aria-expanded="false">Serviços</a>
       <div class="dropdown-menu">
@@ -38,9 +38,10 @@
 {% endblock menu %}
 
 {% block main %}
-<div class="row row-space">
+<div class="row row-space ">
   <div class="col-12">
-    <h1 class="mb-5">Lista Movimentos Rotativos</h1>
+    <h1 class="mb-5 titulosistema">Lista Movimentos Rotativos</h1>
+    <div class="table-responsive">
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -66,6 +67,7 @@
       </tbody>
     </table>
   </div>
+  </div>
 </div>
 
 
@@ -74,19 +76,19 @@
     <a class="btn btn-info" href="{% url 'relatorioMovRotativo_pdf' %}">Relatorio PDF</a>
   </div>
   <div class="col-sm-2">
-    <a class="btn btn-info" href="{% url 'relatorioMovRotativo_csv' %}">Relatorio CSV</a>
+    <a class="btn btn-info btncsv" href="{% url 'relatorioMovRotativo_csv' %}">Relatorio CSV</a>
   </div>
 </div>
 
 
-<div class="row mt-5">
-  <div class="col-12">
+<div class="row mt-5 ">
+  <div class="col-12 movrot">
     <h1>Cadastro</h1>
     <form action="{% url 'core_lista_movrotativos_novo' %}" method="POST">
       {% csrf_token %}
 
       {{ form|bootstrap }}
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button type="submit" class="btn btn-primary btncadastro">Cadastrar</button>
     </form>
   </div>
 </div>

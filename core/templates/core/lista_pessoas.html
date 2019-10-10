@@ -6,7 +6,7 @@
     <li class="nav-item">
       <a class="nav-link active" href="{% url 'core_home'%}">Home</a>
     </li>
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown drop">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
         aria-expanded="false">Serviços</a>
       <div class="dropdown-menu">
@@ -71,8 +71,8 @@
   <div class="col-sm-2">
     <a class="btn btn-info" href="{% url 'relatorioPessoas_pdf' %}">Relatorio PDF</a>
   </div>
-  <div class="col-sm-2">
-    <a class="btn btn-info" href="{% url 'relatorioPessoas_csv' %}">Relatorio CSV</a>
+  <div class="col-sm-2 ">
+    <a class="btn btn-info btncsv" href="{% url 'relatorioPessoas_csv' %}">Relatorio CSV</a>
   </div>
 </div>
 
@@ -86,7 +86,7 @@
 
       {{ form|bootstrap }}
 
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button type="submit" class="btn btn-primary btncadastro">Cadastrar</button>
     </form>
   </div>
 </div>
