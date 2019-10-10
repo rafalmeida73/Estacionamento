@@ -3,37 +3,25 @@
 
 
 {% block main %}
-<div class="row p-3 mb-2 bg-info text-white">
-        <div class="col-sm-3 col-lg-6">
-            <h1 class="titulo">Estacionamento 24 horas</h1>
-            <span class="subtitulo">Slogan Estacionamento</span>
+<nav class="navbar navbar-expand-lg navbar-light bg-info row ">
+        <a class="navbar-brand" href="{% url 'website_home' %}">
+            <img src="{% static 'img/parking.png'%}" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav nav-pills">
+                <a class="nav-item nav-link active  text-white" href="{% url 'website_home' %}" class="linksmenu">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link  text-white" href="{% url 'website_servicos' %}" class="linksmenu">Serviços</a>
+                <a class="nav-item nav-link  text-white" href="{% url 'website_sobre' %}" class="linksmenu">Sobre</a>
+                <a class="nav-item nav-link  text-white" href="{% url 'website_planos' %}" class="linksmenu">Planos</a>
+                <a class="nav-item nav-link text-white" href="{% url 'website_contato' %}" class="linksmenu">Contatos</a>
+                <a class="nav-item nav-link  text-white" href="{% url 'core_home' %}" class="linksmenu">Sistema</a>
+            </div>
         </div>
-        <div class="col-sm-6 col-lg-6">
-            <img src="{% static 'img/parking.png'%}" alt=" Imagem Estacionamento 24 horas" class="logo img-fluid">
-        </div>
-        <div class="col-sm-12">
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class=" text-white nav-link active" href="{% url 'website_home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link " href="{% url 'website_servicos' %}">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link" href="{% url 'website_sobre' %}">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link" href="{% url 'website_planos' %}">Planos</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link " href="{% url 'website_contato' %}">Contatos</a>
-                </li>
-                <li class="nav-item">
-                    <a class=" text-white nav-link" href="{% url 'core_home' %}">Sistema</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    </nav>
 
 <div class="row row-space">
     <div class="col-sm-6 ">
