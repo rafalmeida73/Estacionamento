@@ -15,9 +15,7 @@ margin-left: 80px;
     width:550px;
     margin-right: 150px;
 }
-.linksmenu{
-    margin-right: 100px
-}
+
 .titulo{
     margin-top: 80px;
     margin-left: 90px;
@@ -70,7 +68,8 @@ margin-left: 80px;
     }
     .logo{
         margin-left: 10px;
-        width:100%;
+        width:90%;
+        margin-right: 50px;
     }
     .img-moto{
         margin: 40px 0 40px 17%;
@@ -135,6 +134,7 @@ margin-left: 80px;
     .logo{
         margin-left: 10px;
         width:90%;
+        margin-right: 50px;
     }
     .lugar{
         margin-top: 250px;
@@ -171,9 +171,12 @@ margin-left: 80px;
        /* body{
             background-color: brown;
         }*/
-
+        .footer{
+            width: 100%;
+        }
         .logo{
-            width:90%;
+            width:100%;
+            margin-right: 50px;
         }
         .img-moto{
             margin-left: 40px;
@@ -182,6 +185,7 @@ margin-left: 80px;
         .footer-website{
             bottom: 0;
             position: absolute;
+            width: 100%;
         }
         .lugar{
             margin-top: 100px;
