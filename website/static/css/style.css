@@ -60,10 +60,6 @@ margin-left: 80px;
     margin-top: 50px;
 }
 
-.sobre{
-    font-size: 40px;
-}
-
 
 @media only screen and (max-width: 600px) {
    /* body {
@@ -76,6 +72,7 @@ margin-left: 80px;
         font-size: 20px;
         width: 80%;
         margin-left: 35px;
+        margin-bottom: 40px;
     }
     .subtitulo{
         display: none;
@@ -90,10 +87,7 @@ margin-left: 80px;
         bottom: 0;
         position: absolute;
         margin-left: 80px;
-        width: 100%;
-    }
-    .sobre{
-        font-size: 20px;
+        width: 105%;
     }
     .cspace{
         margin-top: 50px;
@@ -106,7 +100,7 @@ margin-left: 80px;
         font-size: 20px;
     }
     .formulariol{
-        margin:90px 0px 0 50px; 
+        margin:90px 0px 0 30px; 
     }
 
     .sistema{
@@ -128,6 +122,9 @@ margin-left: 80px;
    }
    .titulosistema{
        font-size: 25px;
+   }
+   .sobre{
+       font-size: 24px;
    }
   }
   @media screen and (min-width: 600px) and (max-width: 900px) {
